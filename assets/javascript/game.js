@@ -13,6 +13,18 @@ $()
 var resetAndStart = function () {
     $(".crystals").empty();
 
+    var images = [ 
+        'https://www.gia.edu/images/Brazilian-gemstones-188842-636x358.jpg',
+        'http://www.thebrazilianconnection.com/gemimages/37088.JPG',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3F-IF8YFGmQY3mZEQ5eE6HzRG4aPPoNij6fDhvlX_gNBqPcxTJw',
+        'http://www.kingstonegems.com/wp-content/uploads/brazilian-alexandrite-round-king-stone-gems-160492h.jpg']
+
+    //  var images = [ 
+    //     '../../assets/images/alexandrite.jpg"'
+    //     'http://www.thebrazilianconnection.com/gemimages/37088.JPG',
+    //     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3F-IF8YFGmQY3mZEQ5eE6HzRG4aPPoNij6fDhvlX_gNBqPcxTJw',
+    //     'http://www.kingstonegems.com/wp-content/uploads/brazilian-alexandrite-round-king-stone-gems-160492h.jpg']    
+
     random_result= Math.floor(Math.random() * 102 + 18);
     console.log(random_result);
     $("#result").html('Random Result: ' + random_result);
@@ -24,6 +36,10 @@ var resetAndStart = function () {
             crystal.attr({
             "class": 'crystal',
             "data-random": random
+            });
+            crystal.css({
+            "background-image": "url('" + images[i] + "')",
+            "background-size":"cover"          
             });
       
     $(".crystals").append(crystal);
